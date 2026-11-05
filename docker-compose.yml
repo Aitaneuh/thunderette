@@ -13,4 +13,4 @@ services:
 networks:
   tunnel:
     external: true
-    name: bridge
+    name: nextcloud_default
