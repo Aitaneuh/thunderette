@@ -1,0 +1,16 @@
+services:
+  thunderette:
+    build: .
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /usr/local/apache2/logs
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - tunnel
+
+networks:
+  tunnel:
+    external: true
+    name: bridge
